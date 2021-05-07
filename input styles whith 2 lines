@@ -1,3 +1,10 @@
+<label>
+    <input type="text"  class="inputm" placeholder=" ">
+    <span>Телефон</span>
+</label>
+
+                                    
+                                    
 .inputm {
     height: 70px;
     width: 100%;
