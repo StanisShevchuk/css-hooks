@@ -1,4 +1,6 @@
-&::-webkit-scrollbar-track {
+        scrollbar-color: #0064a7 transparent;
+        scrollbar-wight: 3px;
+        &::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 2px #323949;
         }
         &::-webkit-scrollbar {
