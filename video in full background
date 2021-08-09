@@ -1,0 +1,140 @@
+html
+//
+//
+<div class="videobg">
+        <div class="videobg-width" style="width: 100%;">
+            <div class="videobg-aspect">
+                <div class="videobg-make-height">
+                    <div class="videobg-hide-controls">
+                        <iframe src="https://player.vimeo.com/video/373482272?muted=1&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+css
+//
+//
+.videobg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background: #111;
+}
+
+.videobg-width {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+
+.videobg-aspect {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: -9999px;
+    bottom: -9999px;
+    margin: auto;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+
+.videobg-make-height {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.videobg-hide-controls {
+    box-sizing: content-box;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 55px 97.7777px;
+    top: -55px;
+    left: -97.7777px;
+}
+
+.videobg iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 0 none;
+}
+
+.video-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-wrap iframe {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 100%;
+    height: 220%;
+}
+
+.video-wrap video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media screen and (max-width:520px) {
+    .videobg-width {
+        width: 396.963% !important;
+    }
+}
+
+
+
+
+
+js
+//
+//
+var timeoutId;
+    var $videoBgAspect = $(".videobg-aspect");
+    var $videoBgWidth = $(".videobg-width");
+    var videoAspect = $videoBgAspect.outerHeight() / $videoBgAspect.outerWidth();
+
+    function videobgEnlarge() {
+        console.log('resize');
+        windowAspect = ($(window).height() / $(window).width());
+        if (windowAspect > videoAspect) {
+            $videoBgWidth.width((windowAspect / videoAspect) * 100 + '%');
+        } else {
+            $videoBgWidth.width(100 + "%")
+        }
+    }
+
+    $(window).resize(function() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(videobgEnlarge, 100);
+    });
+
+це для ресайза код
