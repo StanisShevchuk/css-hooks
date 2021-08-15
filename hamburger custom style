@@ -76,3 +76,23 @@
                 left: 7px;
             }
         }
+
+
+
+//
+//
+//
+$(document).ready(function() {
+    $(".hamburger").click(function() {
+        $(this).toggleClass('open');
+        $(".headerins__right").slideToggle("slow");
+    });
+});
+
+
+//
+//
+//
+<div class="hamburger">
+            <span></span><span></span><span></span>
+</div>
